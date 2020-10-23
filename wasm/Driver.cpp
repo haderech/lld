@@ -319,6 +319,7 @@ void LinkerDriver::link(ArrayRef<const char *> ArgsArr) {
   Config->OtherModel = OPT_other_model;
   Config->AllowUndefined = Args.hasArg(OPT_allow_undefined);
   Config->Demangle = Args.hasFlag(OPT_demangle, OPT_no_demangle, true);
+  Config->DisableAbigen = Args.hasArg(OPT_disable_abigen);
   Config->DisableVerify = Args.hasArg(OPT_disable_verify);
   Config->Entry = getEntry(Args, Args.hasArg(OPT_relocatable) ? "" : "_start");
   Config->ExportAll = Args.hasArg(OPT_export_all);
