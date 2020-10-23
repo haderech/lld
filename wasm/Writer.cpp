@@ -101,7 +101,7 @@ private:
   void writeHeader();
   void writeSections();
   void writeABI() {
-     if (abis.empty())
+     if (Config->NoAbigen || abis.empty())
         return;
      try {
         ABIMerger merger(ojson::parse(abis.back()));
